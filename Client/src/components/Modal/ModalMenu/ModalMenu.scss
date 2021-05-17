@@ -1,0 +1,122 @@
+@import "../../../assets/scss/mixin.scss";
+@import "../../../assets/scss/variable.scss";
+
+.modal-menu {
+  background: var(--bg-primary-color);
+  position: fixed;
+  width: 500px;
+  max-width: 100%;
+  height: 100vh;
+  left: 0;
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: all 0.2s ease-in-out;
+  @include flex();
+  &.active {
+    transition: all 0.2s ease-in-out;
+    transition-delay: 0.2s;
+    transform: translateX(0);
+  }
+  .mobile-bar {
+    background: var(--bg-secondary-color);
+    .modal-menu-close {
+      padding: 2rem 0 2rem 0;
+      @include flex($jus: flex-end);
+      @include btnClose($bg: none);
+    }
+    .action-icon {
+      @include flex($dir: column, $ali: center);
+      a {
+        margin: 0.75rem 0;
+        color: var(--bg-secondary-color);
+      }
+    }
+  }
+  .modal-content {
+    flex-grow: 1;
+    padding: 40px;
+    .container {
+      height: 100%;
+      position: relative;
+      @include flex($dir: column, $ali: flex-start);
+      .mobile-search {
+        width: 100%;
+        .search-field {
+          font-size: 1rem;
+        }
+        svg,
+        .btn-close {
+          transform: scale(0.8);
+        }
+      }
+      .mobile-menu {
+        margin: 1rem 0;
+        width: 100%;
+        li {
+          padding: 0.5rem 0;
+          a {
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-size: large;
+          }
+          @include hoverEffect;
+        }
+      }
+      .menu-extras {
+        width: 100%;
+        margin-top: auto;
+        border-top: 1px solid var(--border-color);
+        .account-menu {
+          .account-login {
+            @include flex($jus: space-between, $ali: center);
+          }
+        }
+        .switcher-group {
+          border-top: 1px solid var(--border-color);
+          border-bottom: 1px solid var(--border-color);
+          .switcher-currency,
+          .switcher-language,
+          .switcher-theme {
+            margin: 1rem 0;
+            @include flex($jus: space-between);
+          }
+          .switcher-theme {
+            input {
+              opacity: 0;
+              position: absolute;
+            }
+            label {
+              background: var(--text-secondary-color);
+              border-radius: 999px;
+              cursor: pointer;
+              @include flex($jus:space-between, $ali: center);
+              padding: 5px;
+              position: relative;
+              height: 27px;
+              width: 54px;
+              transform: scale(1.2);
+              svg {
+                font-size: 1rem;
+                color: $--yellow-400;
+              }
+            }
+            label .ball {
+              background-color: var(--bg-primary-color);
+              border-radius: 999px;
+              position: absolute;
+              top: 2px;
+              left: 2px;
+              height: 22px;
+              width: 22px;
+              transform: translateX(0px);
+              transition: transform 0.2s linear;
+            }
+            input:checked + label .ball {
+              transform: translateX(28px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

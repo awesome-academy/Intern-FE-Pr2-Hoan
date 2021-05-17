@@ -1,0 +1,57 @@
+@import "../../../assets/scss/mixin.scss";
+@import "../../../assets/scss/variable.scss";
+
+.modal-cart {
+  background: var(--bg-primary-color);
+  position: fixed;
+  right: 0;
+  width: 400px;
+  max-width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: 0.2s ease-in-out;
+  &.active {
+    transition: 0.2s ease-in-out;
+    transition-delay: 0.2s;
+    transform: translateY(0);
+  }
+  header {
+    height: 70px;
+    padding: 0 2.5rem;
+    background-color: var(--bg-secondary-color);
+    @include flex($ali: center);
+    .modal-cart-close {
+      @include flex($jus: space-between, $ali: center);
+      @include btnClose($bg: none) {
+        margin: 0;
+      }
+    }
+  }
+  .modal-content {
+    .minicart {
+      padding: 2.5rem;
+      height: calc(100vh - 70px);
+      @include flex($dir: column, $jus: space-between);
+      .cart-list {
+        flex-grow: 1;
+      }
+      .cart-summary {
+        .minicart-total {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 60px;
+          color: var(--text-primary-color);
+          margin-bottom: 0;
+          font-size: 1rem;
+        }
+        .minicart-button {
+          button {
+            padding: 0.75rem 1.75rem;
+          }
+        }
+      }
+    }
+  }
+}

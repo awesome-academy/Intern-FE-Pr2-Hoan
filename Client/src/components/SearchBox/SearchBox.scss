@@ -1,0 +1,43 @@
+@import "../../assets/scss/mixin.scss";
+@import "../../assets/scss/variable.scss";
+
+.goya-search {
+  height: 100px;
+  .search-button-group {
+    position: relative;
+    max-width: 768px;
+    margin: 0 auto 30px;
+		@include flex($ali:center);
+    border-bottom: 2px solid var(--text-secondary-color);
+    @include btnClose() {
+      background: none;
+      margin: 0;
+      border-width: 6px;
+      @include animateFade;
+    }
+    .search-field {
+      width: 100%;
+      margin: 0;
+      display: block;
+      border: 0;
+      border-radius: 0;
+      height: auto;
+      padding: 15px 0 15px 8px;
+      position: relative;
+      font-size: 1.75rem;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+    .search-icon {
+			@include flex();
+      svg {
+        font-size: 1.75rem;
+      }
+    }
+		input {
+			background: var(--bg-primary-color);
+			color: var(--text-primary-color);
+		}
+  }
+}

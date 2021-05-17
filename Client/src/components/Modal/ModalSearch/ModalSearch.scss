@@ -1,0 +1,24 @@
+@import "../../../assets/scss/mixin.scss";
+@import "../../../assets/scss/variable.scss";
+
+.modal-search {
+  background: var(--bg-primary-color);
+  position: fixed;
+  width: 100vw;
+  z-index: 1000;
+  transform: translateY(-100%);
+  transition: 0.2s ease-in-out;
+  &.active {
+    transition: 0.2s ease-in-out;
+    transition-delay: .2s;
+    transform: translateY(0);
+  }
+  .modal-search-close {
+    padding: 30px 0 20px 0;
+    @include flex($jus: flex-end);
+    @include btnClose();
+  }
+  .modal-content {
+    padding: 25px 0 50px;
+  }
+}
