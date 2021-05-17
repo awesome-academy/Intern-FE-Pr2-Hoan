@@ -1,3 +1,5 @@
+@import "./variable.scss";
+
 @mixin flex($dir: row, $jus: flex-start, $ali: normal) {
   display: flex;
   flex-direction: $dir;

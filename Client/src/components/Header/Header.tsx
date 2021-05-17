@@ -46,7 +46,6 @@ const Header: React.FC = () => {
     }
     showModalCart();
   };
-  useEffect(() => {}, []);
   return (
     <header className="header">
       <div className="header-main">
@@ -104,7 +103,6 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-      {/* <div className="header-mobile"></div> */}
       <ModalSearch
         onCloseModalSearch={showModalSearch}
         isShowModalSearch={isShowModalSearch}
@@ -113,14 +111,15 @@ const Header: React.FC = () => {
         onCloseModalLogin={showModalLogin}
         isShowModalLogin={isShowModalLogin}
         curUrl={curUrl}
-      />
+        />
       <ModalCart
         onCloseModalCart={showModalCart}
         isShowModalCart={isShowModalCart}
-      />
+        />
       <ModalMenu
         onCloseModalMenu={showModalMenu}
         isShowModalMenu={isShowModalMenu}
+        curUrl={curUrl}
       />
     </header>
   );

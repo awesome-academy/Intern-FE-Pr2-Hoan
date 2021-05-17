@@ -1,0 +1,5 @@
+@import "../../assets/scss/mixin.scss";
+.login-page {
+  padding: 4rem 0 2rem;
+  @include flex($jus: center);
+}

@@ -1,21 +1,33 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Home, About, NotFound } from "./pages";
+import { HomePage, AboutPage, NotFoundPage, LoginPage, RegisterPage, LostPasswordPage } from "./pages";
 import { Header } from "./components";
 
 const routes = [
   {
     path: "/",
     exact: true,
-    component: Home,
+    component: HomePage,
   },
   {
     path: "/about",
-    component: About,
+    component: AboutPage,
+  },
+  {
+    path: "/login",
+    component: LoginPage,
+  },
+  {
+    path: "/register",
+    component: RegisterPage,
+  },
+  {
+    path: "/lost-password",
+    component: LostPasswordPage,
   },
   {
     path: "*",
-    component: NotFound,
+    component: NotFoundPage,
   },
 ];
 

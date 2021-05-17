@@ -1,13 +1,13 @@
 import React from "react";
 import "animate.css";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div className="animate__animated animate__fadeIn">
       <div className="header-spacer"></div>
-      <h2>Home</h2>
+      <h2>HomePage</h2>
     </div>
   );
 };
 
-export default Home;
+export default HomePage;
