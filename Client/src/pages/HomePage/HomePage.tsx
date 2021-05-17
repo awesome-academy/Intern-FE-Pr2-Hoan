@@ -1,11 +1,18 @@
 import React from "react";
 import "animate.css";
+import "./HomePage.scss";
+import { CarouselProducts, PromotesSection } from "../../components";
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
-    <div className="animate__animated animate__fadeIn">
+    <div className="home-page animate__animated animate__fadeIn">
       <div className="header-spacer"></div>
-      <h2>HomePage</h2>
+      <div className="carousel-wrapper" style={{marginBottom: "3rem"}}>
+        <CarouselProducts />
+      </div>
+      <div className="propmote-wrapper">
+        <PromotesSection />
+      </div>
     </div>
   );
 };

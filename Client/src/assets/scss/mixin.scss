@@ -95,3 +95,8 @@
     @content;
   }
 }
+@mixin tablet() {
+  @media (max-width: 992px) {
+    @content;
+  }
+}

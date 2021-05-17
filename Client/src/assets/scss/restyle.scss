@@ -1,0 +1,26 @@
+.ant-carousel {
+  .slick-dots {
+    justify-content: flex-start;
+    margin: 0 4%;
+    li {
+      margin: 0 0.125rem !important;
+      width: 10px !important;
+      height: 10px;
+      button {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background: $--dark-300;
+        animation: none;
+        opacity: 0.5;
+      }
+      &.slick-active {
+        width: 11px !important;
+        height: 11px;
+        button {
+          background: $--yellow-200 !important;
+        }
+      }
+    }
+  }
+}
