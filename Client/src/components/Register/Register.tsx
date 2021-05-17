@@ -38,7 +38,7 @@ const Register: React.FC<registerProps> = (props) => {
             onChange={handleChangeEmail}
             className={`${hasEmail ? "has-text" : ""}`}
             type="text"
-            id="email"
+            id={`email-${props.curUrl}`}
             autoComplete="off"
           />
           <label htmlFor="email">Email address *</label>

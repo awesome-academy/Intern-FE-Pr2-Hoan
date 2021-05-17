@@ -44,24 +44,24 @@ const Login: React.FC<loginProps> = (props) => {
             onChange={handleChangeUsername}
             className={`${hasUsername ? "has-text" : ""}`}
             type="text"
-            id="username"
+            id={`username-${props.curUrl}`}
             autoComplete="off"
           />
-          <label htmlFor="username">Username or email address *</label>
+          <label htmlFor={`username-${props.curUrl}`}>Username or email address *</label>
         </p>
         <p className="input-wrapper">
           <input
             onChange={handleChangePassword}
             className={`${hasPassword ? "has-text" : ""}`}
             type="password"
-            id="password"
+            id={`password-${props.curUrl}`}
             autoComplete="off"
           />
-          <label htmlFor="password">Password *</label>
+          <label htmlFor={`password-${props.curUrl}`}>Password *</label>
         </p>
         <p className="form-group">
-          <label htmlFor="rememberme">
-            <input type="checkbox" id="rememberme" />
+          <label htmlFor={`remember-${props.curUrl}`}>
+            <input type="checkbox" id={`remember-${props.curUrl}`} />
             <span>Remember me</span>
           </label>
           <span className="lost-password float-end" onClick={onCloseModalLogin}>
