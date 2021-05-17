@@ -1,0 +1,96 @@
+@import "./variable.scss";
+
+@mixin flex($dir: row, $jus: flex-start, $ali: normal) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jus;
+  align-items: $ali;
+}
+@mixin btnClose($bg: var(--bg-secondary-color)) {
+  .btn-close {
+    background: $bg;
+    margin: 0 1rem;
+    border-radius: 50%;
+    border: 9px solid transparent;
+    width: 36px;
+    height: 36px;
+    position: relative;
+    cursor: pointer;
+    @include flex($jus: center, $ali: center);
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      margin-top: -1px;
+      background-color: var(--text-primary-color);
+      transform-origin: 50% 50%;
+      opacity: 1;
+      -moz-transition: -moz-transform ease 0.25s;
+      -webkit-transition: -webkit-transform ease 0.25s;
+      -o-transition: -o-transform ease 0.25s;
+      -ms-transition: -ms-transform ease 0.25s;
+      transition: transform ease 0.25s;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+    &:hover {
+      &::after,
+      &::before {
+        background: $--yellow-200;
+        transform: rotate(0deg);
+      }
+    }
+    @content;
+  }
+}
+
+@mixin animateFade() {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  &.active {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+@mixin hoverEffect() {
+  a {
+    white-space: nowrap;
+    align-items: center;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    -webkit-backface-visibility: hidden;
+    &::after {
+      content: "";
+      height: 2px;
+      width: 0;
+      background-color: var(--text-primary-color);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      -webkit-transition: width 0.25s;
+      transition: width 0.25s;
+    }
+  }
+  &:hover,
+  &.active {
+    a {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@mixin inputWrapper() {
+  
+}
