@@ -7,3 +7,5 @@ export { default as ModalMenu } from "./Modal/ModalMenu/ModalMenu";
 export { default as SearchBox } from "./SearchBox/SearchBox";
 export { default as Login } from "./Login/Login";
 export { default as Register } from "./Register/Register";
+export { default as Footer } from "./Footer/Footer";
+export { default as SelectCustom } from "./SelectCustom/SelectCustom";

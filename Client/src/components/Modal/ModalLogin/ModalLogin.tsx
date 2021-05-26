@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./ModalLogin.scss";
-import { Link } from "react-router-dom";
 import { Modal, Register, Login } from "../../";
 
 interface ModalLoginProps {

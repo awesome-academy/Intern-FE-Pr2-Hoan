@@ -1,4 +1,4 @@
-$--dark-600: #282828;
+$--dark-600: #3a3a3a;
 $--dark-300: #444444;
 $--dark-200: #515151;
 $--dark-170: #686868;
@@ -7,7 +7,9 @@ $--dark-100: #767676;
 $--white-600: #aaaaaa;
 $--white-200: #dddddd; 
 $--white-150: #f8f8f8;
-$--white-100: #ffffff;
 $--yellow-400: #f1c40f;
 $--yellow-200: #b9a16b;
 $--yellow-100: #edead3;
+$--white-100: hsla(0, 0%, 100%, 1);
+$--white-50: hsla(0, 0%, 100%, .5);
+$--white-10: hsla(0, 0%, 100%, .1);

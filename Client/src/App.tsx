@@ -1,7 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { HomePage, AboutPage, NotFoundPage, LoginPage, RegisterPage, LostPasswordPage } from "./pages";
-import { Header } from "./components";
+import {
+  HomePage,
+  AboutPage,
+  NotFoundPage,
+  LoginPage,
+  RegisterPage,
+  LostPasswordPage,
+} from "./pages";
+import { Header, Footer } from "./components";
 
 const routes = [
   {
@@ -48,6 +55,7 @@ function App() {
             <Route key={index} {...route} />
           ))}
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

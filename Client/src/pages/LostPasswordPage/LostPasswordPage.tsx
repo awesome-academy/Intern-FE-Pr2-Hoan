@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./LostPasswordPage.scss"
+import "./LostPasswordPage.scss";
 
 const LostPasswordPage = () => {
   const [email, setEmail] = useState("");
@@ -8,7 +8,7 @@ const LostPasswordPage = () => {
     e.target.value.length ? setHasEmail(true) : setHasEmail(false);
     setEmail(e.target.value);
   };
-  const resetPassword = () => {};
+  // const resetPassword = () => {};
   return (
     <div className="animate__animated animate__fadeIn">
       <div className="header-spacer"></div>
@@ -18,7 +18,7 @@ const LostPasswordPage = () => {
             <h2 className="title-page" style={{ textAlign: "center" }}>
               Lost Password
             </h2>
-            <form action="register">
+            <form action="resetPassword">
               <div className="note">
                 <p>
                   Lost your password? Please enter your username or email
@@ -31,14 +31,14 @@ const LostPasswordPage = () => {
                   onChange={handleChangeEmail}
                   className={`${hasEmail ? "has-text" : ""}`}
                   type="text"
-                  id="email"
+                  id="email-lostpass"
                   autoComplete="off"
                 />
-                <label htmlFor="email">Email address *</label>
+                <label htmlFor="email-lostpass">Email address *</label>
               </p>
               <p className="form-actions">
                 <button className="btn-submit btn-dark" type="submit">
-                  Register
+                  Reset password
                 </button>
               </p>
             </form>

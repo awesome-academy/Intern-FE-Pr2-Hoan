@@ -61,7 +61,7 @@
   }
 }
 
-@mixin hoverEffect() {
+@mixin hoverEffect($bg: var(--text-primary-color)) {
   a {
     white-space: nowrap;
     align-items: center;
@@ -73,7 +73,7 @@
       content: "";
       height: 2px;
       width: 0;
-      background-color: var(--text-primary-color);
+      background-color: $bg;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -91,6 +91,8 @@
   }
 }
 
-@mixin inputWrapper() {
-  
+@mixin mobile() {
+  @media (max-width: 768px) {
+    @content;
+  }
 }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Header.scss";
-import "animate.css";
 import { Link, useLocation } from "react-router-dom";
 import {ModalCart, ModalLogin, ModalMenu, ModalSearch} from "../"
 import logoLight from "../../assets/images/logo-light.png";
