@@ -1,0 +1,112 @@
+@import "../../assets/scss/mixin.scss";
+@import "../../assets/scss/variable.scss";
+
+%space-content-header {
+  > * {
+    @include flex($ali: center);
+    margin-left: 24px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--bg-primary-color);
+  @include flex($dir: column);
+  .header-main {
+    height: 100%;
+    @include flex($dir: column, $jus: center, $ali: center);
+    .header-contents {
+      height: 100%;
+      @include flex($ali: center, $jus: space-between);
+      .header-items {
+        display: flex;
+      }
+      .header-left-items {
+        justify-content: flex-start;
+        @extend %space-content-header;
+        .menu-toggle {
+          color: var(--text-primary-color);
+          display: inline-flex;
+          align-items: center;
+          padding: 6px 0;
+          background: transparent;
+          border: 0;
+          outline: none;
+        }
+      }
+      .header-center-items {
+        justify-content: center;
+        height: 100%;
+        * {
+          display: flex;
+          align-items: center;
+        }
+        .logo-holder {
+          height: 100%;
+          padding: 0 2rem;
+          img {
+            max-height: 24px;
+          }
+        }
+        .header-menu {
+          li {
+            display: inline-flex;
+            padding-left: 24px;
+            &:first-child {
+              padding-left: 0;
+            }
+            @include hoverEffect;
+          }
+        }
+      }
+      .header-right-items {
+        justify-content: flex-end;
+        @extend %space-content-header;
+        .minicart-counter {
+          @include flex($jus: center, $ali: center);
+          height: 18px;
+          width: 18px;
+          background: $--yellow-200;
+          color: $--white-100;
+          border-radius: 50px;
+          font-size: 0.75rem;
+          margin-left: 0.5rem;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .header,
+  .header-spacer,
+  .product-header-spacer {
+    height: 90px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .header,
+  .header-spacer,
+  .header_on_scroll .header,
+  .product-header-spacer,
+  .sticky-product-bar {
+    height: 60px;
+  }
+}
+
+.header-menu li {
+  display: inline-flex;
+  padding-left: 24px;
+  &:first-child {
+    padding-left: 0;
+  }
+  @include hoverEffect;
+}

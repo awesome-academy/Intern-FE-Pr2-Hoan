@@ -1,0 +1,24 @@
+@import "../../assets/scss/mixin.scss";
+
+.modal {
+  position: fixed;
+  .modal-space {
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background: rgba(192, 192, 192, 0.6);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+    transition-delay: .2s;
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      transition: all .2s ease-in-out;
+    }
+  }
+}
