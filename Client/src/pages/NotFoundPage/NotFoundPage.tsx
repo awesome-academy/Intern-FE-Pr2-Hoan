@@ -1,6 +1,6 @@
 import React from "react";
 
-const NotFound = () => {
+const NotFoundPage = () => {
   return (
     <div className="animate__animated animate__fadeIn">
       <div className="header-spacer"></div>
@@ -9,4 +9,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default NotFoundPage;

@@ -9,12 +9,12 @@ import { FaMoon } from "react-icons/fa";
 interface modalMenuProps {
   onCloseModalMenu: Function;
   isShowModalMenu: Boolean;
+  curUrl: String;
 }
 
 const ModalMenu: React.FC<modalMenuProps> = (props) => {
   const initialTheme = localStorage.getItem("theme");
   const [curTheme, setCurTheme] = useState(initialTheme);
-  console.log(curTheme);
   const onCloseModalMenu = () => {
     props.isShowModalMenu && props.onCloseModalMenu();
   };
@@ -51,16 +51,16 @@ const ModalMenu: React.FC<modalMenuProps> = (props) => {
               <SearchBox />
             </div>
             <ul className="mobile-menu">
-              <li>
+              <li className={props.curUrl === "/" ? "active" : ""}>
                 <Link to="/">Home</Link>
               </li>
-              <li>
+              <li className={props.curUrl === "/products" ? "active" : ""}>
                 <Link to="/products">Products</Link>
               </li>
-              <li>
-                <Link to="/contact">Contact</Link>
+              <li className={props.curUrl === "/contact-us" ? "active" : ""}>
+                <Link to="/contact-us">Contact</Link>
               </li>
-              <li>
+              <li className={props.curUrl === "/about" ? "active" : ""}>
                 <Link to="/about">About</Link>
               </li>
             </ul>
