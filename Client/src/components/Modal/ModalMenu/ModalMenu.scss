@@ -10,10 +10,10 @@
   left: 0;
   z-index: 1000;
   transform: translateX(-100%);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s linear;
   @include flex();
   &.active {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s linear;
     transition-delay: 0.2s;
     transform: translateX(0);
   }
@@ -92,7 +92,7 @@
               @include flex($jus:space-between, $ali: center);
               padding: 5px;
               position: relative;
-              height: 27px;
+              height: 26px;
               width: 54px;
               transform: scale(1.2);
               svg {

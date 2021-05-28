@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { BiUser, BiHeart } from "react-icons/bi";
 import { FiSun } from "react-icons/fi";
 import { FaMoon } from "react-icons/fa";
+import SelectCustom from "../../SelectCustom/SelectCustom";
 
 interface modalMenuProps {
   onCloseModalMenu: Function;
@@ -20,14 +21,14 @@ const ModalMenu: React.FC<modalMenuProps> = (props) => {
   };
   const changeTheme = (e: any) => {
     if (e.target.checked) {
-      setCurTheme("dark")
+      setCurTheme("dark");
       localStorage.setItem("theme", "dark");
-      document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.setAttribute("data-theme", "dark");
       return;
     }
-    setCurTheme("light")
+    setCurTheme("light");
     localStorage.setItem("theme", "light");
-    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.setAttribute("data-theme", "light");
   };
   return (
     <Modal onClose={props.onCloseModalMenu} isShow={props.isShowModalMenu}>
@@ -74,22 +75,33 @@ const ModalMenu: React.FC<modalMenuProps> = (props) => {
               <ul className="switcher-group">
                 <li className="switcher-currency">
                   <span>Currency</span>
-                  <select name="currency" id="currency">
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                  </select>
+                  <SelectCustom
+                    options={[
+                      { value: "USD", option: "USD" },
+                      { value: "EUR", option: "EUR" },
+                    ]}
+                    select="currency"
+                  />
                 </li>
                 <li className="switcher-language">
                   <span>Language</span>
-                  <select name="language" id="language">
-                    <option value="en">English</option>
-                    <option value="vi">VietNamese</option>
-                  </select>
+                  <SelectCustom
+                    options={[
+                      { value: "English", option: "English" },
+                      { value: "VietNamese", option: "VietNamese" },
+                    ]}
+                    select="language"
+                  />
                 </li>
                 <div className="switcher-theme">
                   <span>Theme</span>
                   <div>
-                    <input type="checkbox" id="theme" checked={curTheme === 'dark' ? true : false } onChange={changeTheme} />
+                    <input
+                      type="checkbox"
+                      id="theme"
+                      checked={curTheme === "dark" ? true : false}
+                      onChange={changeTheme}
+                    />
                     <label htmlFor="theme">
                       <FiSun />
                       <FaMoon />

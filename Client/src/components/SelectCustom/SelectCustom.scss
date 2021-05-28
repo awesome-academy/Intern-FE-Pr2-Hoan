@@ -1,0 +1,27 @@
+.select {
+	position: relative;
+	cursor: pointer;
+	.options {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background: var(--bg-primary-color);
+		visibility: hidden;
+		transition: .2s ease-in;
+		border: 1px solid var(--border-color);
+		display: flex;
+		.option {
+			float: right;
+			padding: .25rem 1rem;
+			&:hover, &.active {
+				background: var(--border-color);
+			}
+		}
+	}
+	&:hover {
+		.options {
+			visibility: visible;
+			transition: .2s ease-out;
+		}
+	}
+}

@@ -12,6 +12,12 @@
   }
 
   .form-group {
+    input {
+      transition-duration: 0ms;
+      &:hover {
+        transition-duration: 0ms;
+      }
+    }
     label {
       display: inline-flex;
       align-items: center;
