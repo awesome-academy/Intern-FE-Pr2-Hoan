@@ -22,17 +22,17 @@ const SelectCustom: React.FC<selectCustomProps> = (props) => {
   }, [dispatch])
   const [value, setValue] = useState(initialState);
   const selected = (e: any) => {
-    setValue(e.target.attributes.value.value)
+    setValue(e.target.dataset.value)
     if (props.select === "currency") {
       dispatch({
         type: CHANGE_CURRENCY,
-        currency: e.target.attributes.value.value,
+        currency: e.target.dataset.value,
       });
       return;
     }
     dispatch({
       type: CHANGE_LANGUAGE,
-      language: e.target.attributes.value.value,
+      language: e.target.dataset.value,
     });
   };
   return (
@@ -40,13 +40,13 @@ const SelectCustom: React.FC<selectCustomProps> = (props) => {
       <span className="selected"> {value} </span>
       <div className="options">
         {props.options.map((e, index) => (
-          <li
+          <div
             onClick={selected}
             className={`option ${value === e.value ? "active" : ""}`}
             key={index}
-            value={e.value}>
+            data-value={e.value}>
             {e.option}
-          </li>
+          </div>
         ))}
       </div>
     </div>

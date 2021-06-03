@@ -14,13 +14,13 @@ const Footer: React.FC = () => {
             <div className="col-md-8">
               <div className="menu-widgets">
                 <div className="row">
-                  {widgets.map((widget) => (
-                    <div className="col-12 col-lg-4 col-md-6 menu-widget">
+                  {widgets.map((widget, i1) => (
+                    <div key={i1} className="col-12 col-lg-4 col-md-6 menu-widget">
                       <div className={`menu-${widget.name}`}>
                         <h6>{widget.name}</h6>
                         <ul className="menu">
-                          {widget.links.map((link) => (
-                            <li className="item">
+                          {widget.links.map((link, i2) => (
+                            <li key={i2} className="item">
                               <Link to={link.to}>{link.text}</Link>
                             </li>
                           ))}

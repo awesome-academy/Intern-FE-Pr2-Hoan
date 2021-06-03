@@ -68,7 +68,11 @@
         border-top: 1px solid var(--border-color);
         .account-menu {
           .account-login {
+            padding: .5rem 0;
             @include flex($jus: space-between, $ali: center);
+            p {
+              margin: 0;
+            }
           }
         }
         .switcher-group {

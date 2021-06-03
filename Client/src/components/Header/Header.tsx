@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./Header.scss";
 import { Link, useLocation } from "react-router-dom";
-import {ModalCart, ModalLogin, ModalMenu, ModalSearch} from "../"
+import { ModalCart, ModalLogin, ModalMenu, ModalSearch } from "../";
 import logoLight from "../../assets/images/logo-light.png";
 import logoDark from "../../assets/images/logo-dark.png";
-import { FaBars } from 'react-icons/fa';
-import { BiUser, BiSearchAlt } from 'react-icons/bi';
-import { FiShoppingCart } from 'react-icons/fi';
-
+import { FaBars } from "react-icons/fa";
+import { BiUser, BiSearchAlt } from "react-icons/bi";
+import { FiShoppingCart } from "react-icons/fi";
 
 const Header: React.FC = () => {
-  const curTheme = localStorage.getItem("theme")
+  const curTheme = localStorage.getItem("theme");
   const [isShowModalSearch, setIsShowModalSearch] = useState(false);
   const [isShowModalLogin, setIsShowModalLogin] = useState(false);
   const [directLoginPage, setdirectLoginPage] = useState(false);
@@ -55,12 +54,12 @@ const Header: React.FC = () => {
                 <FaBars />
               </button>
             </div>
-            <div onClick={showModalSearch}>
+            <div onClick={showModalSearch} className="d-tablet-none">
               <BiSearchAlt />
             </div>
           </div>
           <div className="header-center-items header-items">
-            <nav className="navigation">
+            <nav className="navigation d-tablet-none">
               <ul className="header-menu">
                 <li className={curUrl === "/" ? "active" : ""}>
                   <Link to="/">Home</Link>
@@ -72,10 +71,13 @@ const Header: React.FC = () => {
             </nav>
             <div className="logo-holder">
               <Link to="/">
-                <img src={curTheme === "dark" ? logoDark : logoLight} alt="logo" />
+                <img
+                  src={curTheme === "dark" ? logoDark : logoLight}
+                  alt="logo"
+                />
               </Link>
             </div>
-            <nav className="navigation">
+            <nav className="navigation d-tablet-none">
               <ul className="header-menu">
                 <li className={curUrl === "/contact-us" ? "active" : ""}>
                   <Link to="/contact-us">Contact</Link>
@@ -88,6 +90,7 @@ const Header: React.FC = () => {
           </div>
           <div className="header-right-items header-items">
             <Link
+              className="d-tablet-none"
               onMouseDown={openModalLogin}
               to={`${directLoginPage ? "/login" : curUrl}`}>
               <span className="icon-text">Login</span>
@@ -110,11 +113,11 @@ const Header: React.FC = () => {
         onCloseModalLogin={showModalLogin}
         isShowModalLogin={isShowModalLogin}
         curUrl={curUrl}
-        />
+      />
       <ModalCart
         onCloseModalCart={showModalCart}
         isShowModalCart={isShowModalCart}
-        />
+      />
       <ModalMenu
         onCloseModalMenu={showModalMenu}
         isShowModalMenu={isShowModalMenu}
