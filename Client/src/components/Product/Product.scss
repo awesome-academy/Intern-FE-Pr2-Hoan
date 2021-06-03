@@ -1,0 +1,130 @@
+@import "../../assets/scss/variable.scss";
+@import "../../assets/scss/mixin.scss";
+
+.product {
+  .product-image {
+    position: relative;
+    &:hover {
+      .image-wrapper {
+        img {
+          &:first-child {
+            opacity: 0;
+            transition: all 0.3s ease-in;
+          }
+          &:last-child {
+            opacity: 1;
+            transition: all 0.3s ease-in;
+          }
+        }
+      }
+    }
+    .image-wrapper {
+      position: relative;
+      padding-bottom: 96%;
+      img {
+        &:first-child {
+          opacity: 1;
+          transition: all 0.3s ease-in;
+        }
+        &:last-child {
+          opacity: 0;
+          transition: all 0.3s ease-in;
+        }
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      .actions-wrapper {
+        position: absolute;
+        bottom: 10%;
+        width: 100%;
+        @include flex($jus: center);
+        .actions {
+          background: var(--bg-primary-color);
+          width: 50%;
+          height: 50px;
+          border-radius: 3px;
+          transform: scale(.8);
+          opacity: 0;
+          transition: all 0.3s ease-in-out;
+          box-shadow: 0 5px 15px 0 rgba($color: #000000, $alpha: 0.15);
+          @include flex();
+          .action {
+            height: 100%;
+						cursor: pointer;
+            width: calc((100% - 2px) / 3);
+            @include flex($jus: center, $ali: center);
+						svg {
+							color: var(--text-secondary-color);
+							font-size: 1.25rem;
+							transition: all .3s ease-in;
+						}
+						&:hover {
+							svg {
+								color: var(--text-primary-color);
+								font-size: 1.375rem;
+								&:last-child {
+									opacity: 1;
+								}
+							}
+						}
+          }
+          .add-wishlist {
+						svg {
+							&:last-child {
+								position: absolute;
+								opacity: 0;
+							}
+						}
+          }
+          .add-cart {
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+          }
+          .see-detail {
+          }
+        }
+      }
+    }
+    .bagde-sale {
+      position: absolute;
+      background: $--white-100;
+      color: $--red-100;
+      top: 4%;
+      left: 4%;
+      font-size: 0.625rem;
+      padding: 0 0.325rem;
+      border-radius: 10px;
+    }
+  }
+  .product-caption {
+    padding-top: 0.5rem;
+    .name {
+      font-size: 1rem;
+    }
+    .price-wrapper {
+      color: var(--text-secondary-color);
+      .price {
+        margin-right: 1rem;
+        text-decoration: line-through;
+      }
+      .price-discount {
+        font-size: 1rem;
+      }
+    }
+  }
+  &:hover {
+    .product-image {
+      .image-wrapper {
+        .actions-wrapper {
+          .actions {
+            transform: scale(1);
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}

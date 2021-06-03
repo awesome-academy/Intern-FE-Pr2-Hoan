@@ -1,5 +1,5 @@
 import React from "react";
-import "./CarouselProducts.scss";
+import "./CarouselBanner.scss";
 import { Carousel } from "antd";
 import { dataBanner } from "./banners";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
@@ -9,7 +9,7 @@ interface carouselProps {
 
 }
 
-const CarouselProducts: React.FC<carouselProps> = (props) => {
+const CarouselBanner: React.FC<carouselProps> = (props) => {
   const carousel = React.createRef<CarouselRef>();
   const prev = (e: any) => {
     carousel.current?.prev();
@@ -38,4 +38,4 @@ const CarouselProducts: React.FC<carouselProps> = (props) => {
   );
 };
 
-export default CarouselProducts;
+export default CarouselBanner;

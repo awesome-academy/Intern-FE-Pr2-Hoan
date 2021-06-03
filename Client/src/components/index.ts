@@ -9,6 +9,7 @@ export { default as Login } from "./Login/Login";
 export { default as Register } from "./Register/Register";
 export { default as Footer } from "./Footer/Footer";
 export { default as SelectCustom } from "./SelectCustom/SelectCustom";
-export { default as CarouselProducts } from "./CarouselProducts/CarouselProducts";
+export { default as CarouselBanner } from "./CarouselBanner/CarouselBanner";
 export { default as PromotesSection } from "./PromotesSection/PromotesSection";
 export { default as Promote } from "./PromotesSection/Promote/Promote";
+export { default as Product } from "./Product/Product";

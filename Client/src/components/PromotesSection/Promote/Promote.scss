@@ -1,0 +1,68 @@
+@import "../../../assets/scss/variable.scss";
+@import "../../../assets/scss/mixin.scss";
+
+.promote {
+  margin-bottom: 30px;
+  padding-top: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+  padding-left: 10%;
+  background: $--grey-100;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 3px;
+  .promote-content {
+    .promote-text {
+      margin-bottom: 2rem;
+      .fancy-title {
+        color: $--yellow-200;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+      }
+      .title {
+        font-weight: 400;
+        line-height: 1.2;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+      .text {
+        color: $--dark-170;
+      }
+    }
+    .promote-button {
+      .fancy-button {
+        @include flex($jus: center, $ali: center);
+        display: inline-flex;
+        position: relative;
+        border: 2px solid $--dark-600;
+        color: $--dark-170;
+        padding: 0.5rem 1.5rem;
+        font-size: 0.875em;
+        &:hover {
+          span {
+            transform: translateX(-10%);
+          }
+          svg {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        span {
+          transition: all 0.2s ease-in-out;
+        }
+        svg {
+          position: absolute;
+          right: 4%;
+          opacity: 0;
+          transform: translateX(-50%);
+          transition: all 0.2s ease-in-out;
+          color: $--dark-170;
+        }
+      }
+    }
+  }
+}
