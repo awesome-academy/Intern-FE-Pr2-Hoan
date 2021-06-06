@@ -13,3 +13,4 @@ export { default as CarouselBanner } from "./CarouselBanner/CarouselBanner";
 export { default as PromotesSection } from "./PromotesSection/PromotesSection";
 export { default as Promote } from "./PromotesSection/Promote/Promote";
 export { default as Product } from "./Product/Product";
+export { default as SimpleProduct } from "./Product/SimpleProduct/SimpleProduct";
