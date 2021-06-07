@@ -4,9 +4,10 @@ import { Carousel } from "antd";
 import { dataBanner } from "./banners";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { CarouselRef } from "antd/lib/carousel";
+import "animate.css"
 
 interface carouselProps {
-
+  isAnimate?: boolean
 }
 
 const CarouselBanner: React.FC<carouselProps> = (props) => {
@@ -18,7 +19,7 @@ const CarouselBanner: React.FC<carouselProps> = (props) => {
     carousel.current?.next();
   };
   return (
-    <div className="carousel">
+    <div className={`carousel ${props.isAnimate ? "animate__animated animate__fadeIn" : ""}`}>
       <Carousel ref={carousel} autoplay>
         {dataBanner.map((e, i) => (
           <div key={i} className="carousel-content">

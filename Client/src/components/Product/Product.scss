@@ -4,20 +4,6 @@
 .product {
   .product-image {
     position: relative;
-    &:hover {
-      .image-wrapper {
-        img {
-          &:first-child {
-            opacity: 0;
-            transition: all 0.3s ease-in;
-          }
-          &:last-child {
-            opacity: 1;
-            transition: all 0.3s ease-in;
-          }
-        }
-      }
-    }
     .image-wrapper {
       position: relative;
       padding-bottom: 96%;
@@ -34,6 +20,16 @@
         object-fit: cover;
         width: 100%;
         height: 100%;
+        &:hover {
+          &:first-child {
+            opacity: 0;
+            transition: all 0.3s ease-in;
+          }
+          &:last-child {
+            opacity: 1;
+            transition: all 0.3s ease-in;
+          }
+        }
       }
       .actions-wrapper {
         position: absolute;
@@ -45,38 +41,38 @@
           width: 50%;
           height: 50px;
           border-radius: 3px;
-          transform: scale(.8);
+          transform: scale(0.8);
           opacity: 0;
           transition: all 0.3s ease-in-out;
           box-shadow: 0 5px 15px 0 rgba($color: #000000, $alpha: 0.15);
           @include flex();
           .action {
             height: 100%;
-						cursor: pointer;
+            cursor: pointer;
             width: calc((100% - 2px) / 3);
             @include flex($jus: center, $ali: center);
-						svg {
-							color: var(--text-secondary-color);
-							font-size: 1.25rem;
-							transition: all .3s ease-in;
-						}
-						&:hover {
-							svg {
-								color: var(--text-primary-color);
-								font-size: 1.375rem;
-								&:last-child {
-									opacity: 1;
-								}
-							}
-						}
+            svg {
+              color: var(--text-secondary-color);
+              font-size: 1.25rem;
+              transition: all 0.3s ease-in;
+            }
+            &:hover {
+              svg {
+                color: var(--text-primary-color);
+                font-size: 1.375rem;
+                &:last-child {
+                  opacity: 1;
+                }
+              }
+            }
           }
           .add-wishlist {
-						svg {
-							&:last-child {
-								position: absolute;
-								opacity: 0;
-							}
-						}
+            svg {
+              &:last-child {
+                position: absolute;
+                opacity: 0;
+              }
+            }
           }
           .add-cart {
             border-left: 1px solid var(--border-color);
