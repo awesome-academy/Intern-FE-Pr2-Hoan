@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import switchersReducer from "./switchersReducer"
+import switchersReducer from "./switchersReducer";
+import scrollReducer from "./scrollReducer";
 
 const rootReducers = combineReducers({
-	switchers: switchersReducer
+	switchers: switchersReducer,
+	scroll: scrollReducer
 })
 
 export default rootReducers

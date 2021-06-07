@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { BiUser, BiHeart } from "react-icons/bi";
 import { FiSun } from "react-icons/fi";
 import { FaMoon } from "react-icons/fa";
-import SelectCustom from "../../SelectCustom/SelectCustom";
+import { SelectCustom } from "../../";
 
 interface modalMenuProps {
   onCloseModalMenu: Function;

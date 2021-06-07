@@ -1,0 +1,15 @@
+@import "../../assets/scss/mixin.scss";
+@import "../../assets/scss/variable.scss";
+
+.button-scroll-to-top {
+  position: fixed;
+  bottom: 4%;
+  right: 4%;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+	cursor: pointer;
+  background: var(--bg-primary-color);
+  border: 2px solid var(--border-color);
+  @include flex($jus:center, $ali:center);
+}

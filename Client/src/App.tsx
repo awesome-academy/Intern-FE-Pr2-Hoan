@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {
   HomePage,
@@ -8,7 +8,9 @@ import {
   RegisterPage,
   LostPasswordPage,
 } from "./pages";
-import { Header, Footer } from "./components";
+import { Header, Footer, ButtonScrollToTop } from "./components";
+import { useDispatch, useSelector, RootStateOrAny } from "react-redux";
+import { HANDLE_SCROLL } from "./redux/actionTypes";
 
 const routes = [
   {
@@ -39,6 +41,11 @@ const routes = [
 ];
 
 function App() {
+  const dispatch = useDispatch();
+  const curPageYOffset: number = useSelector(
+    (state: RootStateOrAny) => state.scroll.curOffsetTop
+  );
+  const [isShowButtonScroolToTop, setIsShowButtonScroolToTop] = useState(false);
   const curTheme = localStorage.getItem("theme");
   if (curTheme === "light") {
     document.documentElement.setAttribute("data-theme", "light");
@@ -46,6 +53,16 @@ function App() {
   if (curTheme === "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
   }
+  useEffect(() => {
+    window.onscroll = () => {
+      dispatch({ type: HANDLE_SCROLL, pageYOffset: window.pageYOffset });
+    };
+  }, []);
+  useEffect(() => {
+    curPageYOffset > 90
+      ? setIsShowButtonScroolToTop(true)
+      : setIsShowButtonScroolToTop(false);
+  }, [curPageYOffset]);
   return (
     <div className="App">
       <Router>
@@ -56,6 +73,7 @@ function App() {
           ))}
         </Switch>
         <Footer />
+        <ButtonScrollToTop isShow={isShowButtonScroolToTop} />
       </Router>
     </div>
   );

@@ -5,17 +5,19 @@ import { Promote, Product } from "../";
 import { promote1, promote2, promote3 } from "./promotes";
 import { Carousel } from "antd";
 import { CarouselRef } from "antd/lib/carousel";
+import "animate.css"
 
-interface promotesProps {}
+interface promotesProps {
+}
 
 const PromotesSection: React.FC<promotesProps> = (props) => {
   const carousel = React.createRef<CarouselRef>();
-  const prev = (e: any) => {
-    carousel.current?.prev();
-  };
-  const next = (e: any) => {
-    carousel.current?.next();
-  };
+  // const prev = (e: any) => {
+  //   carousel.current?.prev();
+  // };
+  // const next = (e: any) => {
+  //   carousel.current?.next();
+  // };
   return (
     <div className="promote-section container">
       <Row gutter={[16, 16]}>

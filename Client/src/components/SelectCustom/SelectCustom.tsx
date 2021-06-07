@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { CHANGE_CURRENCY, CHANGE_LANGUAGE } from "../../redux/actionTypes";
 import "./SelectCustom.scss";
@@ -18,8 +18,6 @@ const SelectCustom: React.FC<selectCustomProps> = (props) => {
       ? state.switchers.currency
       : state.switchers.language
   );
-  useEffect(() => {
-  }, [dispatch])
   const [value, setValue] = useState(initialState);
   const selected = (e: any) => {
     setValue(e.target.dataset.value)
