@@ -2,7 +2,7 @@ import { put, select } from "redux-saga/effects";
 import { CHANGE_CURRENCY_SUCCESS, CHANGE_LANGUAGE_SUCCESS } from "../actionTypes";
 
 function* changeTheme() {
-  const curSwitchers:SwitchersState = yield select((state) => state.switchers);
+  const curSwitchers:SwitchersState = yield select((state: any) => state.switchers);
   console.log(curSwitchers);
   return;
 }

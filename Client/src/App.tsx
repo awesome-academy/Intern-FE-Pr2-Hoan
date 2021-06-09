@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {
   HomePage,
+  ProductsPage,
   AboutPage,
   NotFoundPage,
   LoginPage,
@@ -17,6 +18,10 @@ const routes = [
     path: "/",
     exact: true,
     component: HomePage,
+  },
+  {
+    path: "/products",
+    component: ProductsPage,
   },
   {
     path: "/about",
@@ -53,16 +58,19 @@ function App() {
   if (curTheme === "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
   }
+
   useEffect(() => {
     window.onscroll = () => {
       dispatch({ type: HANDLE_SCROLL, pageYOffset: window.pageYOffset });
     };
-  }, []);
+  }, [dispatch]);
+
   useEffect(() => {
     curPageYOffset > 90
       ? setIsShowButtonScroolToTop(true)
       : setIsShowButtonScroolToTop(false);
   }, [curPageYOffset]);
+
   return (
     <div className="App">
       <Router>

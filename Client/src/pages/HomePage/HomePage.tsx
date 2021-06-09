@@ -29,14 +29,14 @@ const HomePage: React.FC = () => {
     window.onscroll = () => {
       dispatch({ type: HANDLE_SCROLL, pageYOffset: window.pageYOffset });
     };
-  }, []);
+  }, [dispatch]);
   useEffect(() => {
     curPageYOffset >
     (introElement.current ? introElement.current?.offsetTop : 0) -
       window.outerHeight
       ? setAnimatedIntroElement(true)
       : setAnimatedIntroElement(false);
-  }, [curPageYOffset]);
+  }, [curPageYOffset, introElement]);
   return (
     <div className="home-page animate__animated animate__fadeIn">
       <div className="header-spacer"></div>
