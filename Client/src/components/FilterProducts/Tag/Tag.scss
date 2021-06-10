@@ -1,0 +1,30 @@
+@import "../../../assets/scss/variable.scss";
+@import "../../../assets/scss/mixin.scss";
+
+.tag {
+  padding: 0.25rem 0.5rem .25rem .75rem;
+  border-radius: 1rem;
+  background-color: var(--border-color);
+  @include flex();
+  p {
+    @include flex($ali: center);
+    margin-bottom: 0;
+		.color {
+			width: 12px;
+			height: 12px;
+			border-radius: 999px;
+			margin-right: .5rem;
+		}
+    span {
+      margin-right: 0.25rem;
+    }
+    svg {
+			transform: rotate(45deg);
+      font-size: 1.25rem;
+			color: var(--text-secondary-color);
+			&:hover {
+				color: var(--text-primary-color);
+			}
+    }
+  }
+}

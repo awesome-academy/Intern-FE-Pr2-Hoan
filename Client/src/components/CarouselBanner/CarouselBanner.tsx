@@ -12,10 +12,10 @@ interface carouselProps {
 
 const CarouselBanner: React.FC<carouselProps> = (props) => {
   const carousel = React.createRef<CarouselRef>();
-  const prev = (e: any) => {
+  const prev = () => {
     carousel.current?.prev();
   };
-  const next = (e: any) => {
+  const next = () => {
     carousel.current?.next();
   };
   return (

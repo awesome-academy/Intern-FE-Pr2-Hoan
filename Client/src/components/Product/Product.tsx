@@ -7,7 +7,7 @@ import { IoResize } from "react-icons/io5";
 
 interface propductProps {}
 
-const Product: React.FC = (props) => {
+const Product: React.FC<propductProps> = (props) => {
   return (
     <div className="product">
       <div className="product-image">

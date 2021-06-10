@@ -29,10 +29,14 @@ const Register: React.FC<registerProps> = (props) => {
 	const onCloseModalLogin = () => {
 		props.onCloseModalLogin && props.onCloseModalLogin()
 	}
+  const register = () => {
+    console.log(email);
+    
+  }
   return (
     <div className="register animate__animated animate__fadeIn">
       <h2 className="title-register">Register</h2>
-      <form action="register">
+      <form>
         <p className="input-wrapper">
           <input
             onChange={handleChangeEmail}
@@ -55,7 +59,7 @@ const Register: React.FC<registerProps> = (props) => {
           </p>
         </div>
         <p className="form-actions">
-          <button className="btn-submit btn-dark" type="submit">
+          <button className="btn-submit btn-dark" type="submit" onClick={register}>
             Register
           </button>
         </p>

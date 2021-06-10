@@ -1,4 +1,4 @@
-import { put, select } from "redux-saga/effects";
+import { put } from "redux-saga/effects";
 import { HANDLE_SCROLL_SUCCESS } from "../actionTypes";
 
 function* handleScroll(input: any) {

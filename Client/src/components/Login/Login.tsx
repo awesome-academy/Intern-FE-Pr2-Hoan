@@ -17,17 +17,27 @@ const Login: React.FC<loginProps> = (props) => {
 	: props.directRegisterPage
 	? "/register"
 	: props.curUrl;
-  const [username, setUsername] = useState("");
+  const [formLogin, setFormLogin] = useState({
+    username: "",
+    password: ""
+  });
   const [hasUsername, setHasUsername] = useState(false);
-  const [password, setPassword] = useState("");
   const [hasPassword, setHasPassword] = useState(false);
   const handleChangeUsername = (e: any) => {
     e.target.value.length ? setHasUsername(true) : setHasUsername(false);
-    setUsername(e.target.value);
+    const curForm = {
+      ...formLogin,
+      username: `${e.target.value}`
+    } 
+    setFormLogin(curForm);
   };
   const handleChangePassword = (e: any) => {
     e.target.value.length ? setHasPassword(true) : setHasPassword(false);
-    setPassword(e.target.value);
+    const curForm = {
+      ...formLogin,
+      password: `${e.target.value}`
+    } 
+    setFormLogin(curForm);
   };
   const register = (e: any) => {
     props.register && props.register(e)
@@ -35,10 +45,13 @@ const Login: React.FC<loginProps> = (props) => {
   const onCloseModalLogin = () => {
     props.onCloseModalLogin && props.onCloseModalLogin();
   };
+  const Login = () => {
+    console.log(formLogin);
+  }
   return (
     <div className="login animate__animated animate__fadeIn">
       <h2 className="title-login">Login</h2>
-      <form action="login">
+      <form>
         <p className="input-wrapper">
           <input
             onChange={handleChangeUsername}
@@ -69,7 +82,7 @@ const Login: React.FC<loginProps> = (props) => {
           </span>
         </p>
         <p className="form-actions">
-          <button className="btn-submit btn-dark" type="submit">
+          <button className="btn-submit btn-dark" type="submit" onClick={Login}>
             Log in
           </button>
         </p>

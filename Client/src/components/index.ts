@@ -15,3 +15,5 @@ export { default as Promote } from "./PromotesSection/Promote/Promote";
 export { default as Product } from "./Product/Product";
 export { default as SimpleProduct } from "./Product/SimpleProduct/SimpleProduct";
 export { default as ButtonScrollToTop } from "./ButtonScrollToTop/ButtonScrollToTop";
+export { default as FilterProducts } from "./FilterProducts/FilterProducts";
+export { default as TitlePage } from "./TitlePage/TitlePage";
